@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <title>ExtJS Core - JSON CSS Demo</title>
+    <script type="text/javascript" src="../../../../extcore/3/ext-core.js" ></script>
+    <script type="text/javascript" src="../../../../lib/ux/JsonCSS.js" ></script>
+    <script type="text/javascript" >
+    Ext.onReady(function(){
+        var mySource = Ext.get('source');
+        var myO = Ext.decode( mySource.dom.innerHTML) ;
+        Ext.ux.JsonCss.applyStyles('', myO);
+    })
+    </script>
+</head>
+<body>
+   		<h1>JSON CSS Selectors Demonstration</h1>
+		<p>Using JSON CSS a large number of custom selectors are possible (as well as all the basics).</p>
+
+		<h2 class="header">This is a header. It is blue.</h2>
+
+		<h3 class="subheader">This is a subheader. It's red.</h3>
+
+		<p>
+			<span>This is some plain old text.</span>
+			<span>This is some text that contains the word 'free', so it gets highlighted!</span>
+		</p>
+
+		<p>
+			<a href="nowhere.html">This is an internal link</a>, and
+			<a href="http://www.google.com/">This is an external link.</a>
+		</p>
+
+		<table id="testTable" cellspacing="0" cellpadding="3">
+			<tr><th>One</th><th>Two</th><th>Three</th><th>Four</th><th>Five</th></tr>
+			<tr><td>Lorem</td><td>Ipsum</td><td>Dolor</td><td>Sit</td><td>Amet</td></tr>
+			<tr><td>Lorem</td><td>Ipsum</td><td>Dolor</td><td>Sit</td><td>Amet</td></tr>
+			<tr><td>Lorem</td><td>Ipsum</td><td>Dolor</td><td>Sit</td><td>Amet</td></tr>
+			<tr><td>Lorem</td><td>Ipsum</td><td>Dolor</td><td>Sit</td><td>Amet</td></tr>
+			<tr><td>Lorem</td><td>Ipsum</td><td>Dolor</td><td>Sit</td><td>Amet</td></tr>
+			<tr><td>Lorem</td><td>Ipsum</td><td>Dolor</td><td>Sit</td><td>Amet</td></tr>
+			<tr><td>Lorem</td><td>Ipsum</td><td>Dolor</td><td>Sit</td><td>Amet</td></tr>
+			<tr><td>Lorem</td><td>Ipsum</td><td>Dolor</td><td>Sit</td><td>Amet</td></tr>
+		</table>
+
+		<div>This is the first div.</div>
+		
+		<div>This is the second div.</div>
+
+		<h2>JSON CSS</h2>
+		<pre id="source">{
+    "h2": {
+        "color": "blue"
+    },
+
+    ".subheader": {
+        "color": "red"
+    },
+
+    "span:contains(free)": {
+        "background-color": "yellow"
+    },
+
+    "a[href^=http]": {
+        "background": "transparent url(externalLink.jpg) top left no-repeat",
+        "padding-left": "14px"
+    },
+
+    "#testTable tr:odd": {
+        "background-color": "#9CF"
+    },
+
+    "div": {
+        "margin": "10px 0",
+        "width": "250px"
+    },
+    
+    "div:first": {
+        "background-color": "lightgreen"
+    }
+}</pre>
+</body>
+</html>
